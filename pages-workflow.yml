@@ -1,0 +1,52 @@
+name: Refresh podcast and publish website
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Refresh podcast archive
+        run: node scripts/update-podcast.mjs
+      - name: Save archive for future runs
+        run: |
+          if ! git diff --quiet -- podcast-episodes.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add podcast-episodes.json
+            git commit -m "Refresh published podcast archive"
+            git push origin HEAD:main
+          fi
+      - uses: actions/configure-pages@v5
+      - name: Prepare public files
+        run: |
+          mkdir _site
+          cp index.html .nojekyll podcast-episodes.json *.png *.jpg *.svg *.txt _site/
+          cp -r assets _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
