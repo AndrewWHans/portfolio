@@ -1,6 +1,11 @@
 {
   "episodes": [
     {
+      "videoId": "Eqmv1Q2JOF4",
+      "title": "How to Build Confidence Through Setbacks | Jeff Salzenstein",
+      "thumbnail": "https://i.ytimg.com/vi/Eqmv1Q2JOF4/hq720.jpg"
+    },
+    {
       "videoId": "z7m0z3bnBtc",
       "title": "Building Starting Small: Entrepreneurship, Relationships, and Taking Action | Cameron Nagle",
       "thumbnail": "https://i.ytimg.com/vi/z7m0z3bnBtc/hq720.jpg"
@@ -32,6 +37,6 @@
     }
   ],
   "syncStatus": "current",
-  "lastSyncedAt": "2026-10-16T11:32:07.176Z",
-  "lastAttemptedAt": "2026-10-16T11:32:07.176Z"
+  "lastSyncedAt": "2026-10-16T16:44:39.119Z",
+  "lastAttemptedAt": "2026-10-16T16:44:39.119Z"
 }
