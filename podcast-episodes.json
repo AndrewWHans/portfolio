@@ -1,6 +1,11 @@
 {
   "episodes": [
     {
+      "videoId": "Y_g13EKWPJw",
+      "title": "Why AI Alone Isn't Enough to Build a Successful Startup | Toph Day",
+      "thumbnail": "https://i.ytimg.com/vi/Y_g13EKWPJw/hq720.jpg"
+    },
+    {
       "videoId": "LHnJcuL04a8",
       "title": "Finding Strength Through Loss & Breaking Into Tech | Seth Johnson",
       "thumbnail": "https://i.ytimg.com/vi/LHnJcuL04a8/hq720.jpg"
@@ -42,6 +47,6 @@
     }
   ],
   "syncStatus": "current",
-  "lastSyncedAt": "2026-11-05T20:02:18.013Z",
-  "lastAttemptedAt": "2026-11-05T20:02:18.013Z"
+  "lastSyncedAt": "2026-11-19T07:33:53.127Z",
+  "lastAttemptedAt": "2026-11-19T07:33:53.127Z"
 }
